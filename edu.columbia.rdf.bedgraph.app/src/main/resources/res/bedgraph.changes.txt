@@ -1,0 +1,25 @@
+VERSION 6 - 06/08/16
+
+  * Bug fixes.
+  
+  
+VERSION 5 - 03/25/15
+
+  * Support for bed and bedgraph.
+  
+  
+VERSION 4 - 02/18/15
+
+  * Simplified layout and controls for reordering bed files.
+  
+  
+VERSION 2 - 11/07/14
+
+  * Support for track height.
+  
+  
+VERSION 1 - 11/06/14
+
+  * Initial release.
+  * Edit bedgraph names, descriptions and colors.
+  * Save multiple bedgraphs into a single file for uploading.

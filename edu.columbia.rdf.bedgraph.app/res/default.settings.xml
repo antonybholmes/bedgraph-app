@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<setting name="/bedgraph/help/url" value="http://156.145.14.248:8080/"/>
+	<setting name="/peaks/file-menu-default-index" value="0"/>
+	<setting name="/peaks/help/type" value="remote"/>
+	<setting name="/peaks/max-display-genes" value="10"/>
+</settings>
