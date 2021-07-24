@@ -10,6 +10,7 @@ import java.util.Map;
 import org.jebtk.bioinformatics.ext.ucsc.Bed;
 import org.jebtk.bioinformatics.ext.ucsc.BedGraph;
 import org.jebtk.bioinformatics.ext.ucsc.UCSCTrack;
+import org.jebtk.bioinformatics.genomic.GenomicType;
 import org.jebtk.bioinformatics.ui.BioInfDialog;
 import org.jebtk.bioinformatics.ui.external.ucsc.TrackPanel;
 import org.jebtk.core.collections.CollectionUtils;
@@ -66,10 +67,20 @@ public class MainBedGraphWindow extends ModernRibbonWindow implements ModernClic
 
 	private class TrackEvents implements ModernSelectionListener {
 
-		@Override
-		public void selectionChanged(ChangeEvent e) {
-			editBedGraph();
-		}
+		//@Override
+		//public void selectionChanged(ChangeEvent e) {
+		//	editBedGraph();
+		//}
+
+    @Override
+    public void selectionAdded(ChangeEvent e) {
+      editBedGraph();
+    }
+
+    @Override
+    public void selectionRemoved(ChangeEvent e) {
+      editBedGraph();
+    }
 
 	}
 
@@ -210,7 +221,7 @@ public class MainBedGraphWindow extends ModernRibbonWindow implements ModernClic
 			return;
 		}
 
-		tabsPane().addLeftTab("Files", mBedGraphsPanel, 250, 200, 500);
+		tabsPane().tabs().left().add("Files", mBedGraphsPanel, 250, 200, 500);
 	}
 
 	@Override
@@ -316,13 +327,13 @@ public class MainBedGraphWindow extends ModernRibbonWindow implements ModernClic
 		List<UCSCTrack> tracks = new ArrayList<UCSCTrack>();
 
 		for (Path file : files) {
-			List<UCSCTrack> tmpTracks;
+			List<BedGraph> tmpTracks = BedGraph.parse(file);;
 
-			if (PathUtils.getFileExt(file).equals("bed")) {
-				tmpTracks = Bed.parseTracks(file);
-			} else {
-				tmpTracks = BedGraph.parse(file);
-			}
+//			if (PathUtils.getFileExt(file).equals("bed")) {
+//				tmpTracks = Bed.parseTracks(GenomicType.REGION, file);
+//			} else {
+//				tmpTracks = BedGraph.parse(file);
+//			}
 
 			for (UCSCTrack track : tmpTracks) {
 				tracks.add(track);

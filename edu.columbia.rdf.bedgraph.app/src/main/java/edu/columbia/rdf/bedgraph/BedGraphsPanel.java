@@ -139,7 +139,7 @@ public class BedGraphsPanel extends ModernComponent implements ModernClickListen
 
 		for (Path file : files) {
 
-			List<UCSCTrack> fileTracks = BedGraph.parse(file);
+			List<BedGraph> fileTracks = BedGraph.parse(file);
 				
 			for (UCSCTrack track : fileTracks) {
 				tracks.add(track);

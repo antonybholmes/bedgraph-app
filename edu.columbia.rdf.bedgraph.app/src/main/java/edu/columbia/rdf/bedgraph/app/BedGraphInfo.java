@@ -11,7 +11,6 @@ public class BedGraphInfo extends GuiAppInfo {
 		super("BedGraph",
 				new AppVersion(6),
 				"Copyright (C) 2014-${year} Antony Holmes",
-				AssetService.getInstance().loadIcon(BedGraphIcon.class, 32),
 				AssetService.getInstance().loadIcon(BedGraphIcon.class, 128),
 				"Manipulate BedGraph files.");
 	}
